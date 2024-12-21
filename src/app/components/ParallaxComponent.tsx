@@ -20,7 +20,7 @@ export default function ParallaxComponent() {
   ];
 
   return (
-    <div className="bg-black relative" style={{ position: "relative", width: "100%", height: "100vh" }}>
+    <div className="bg-black relative" style={{ position: "relative", width: "100%", height: "100vh", overflow:"hidden"}}>
       <img src="/logo.svg" alt="logo" style={{ position: "absolute", zIndex: 2, top: 25, left: 25 }} />
       <motion.div
         className="hero"

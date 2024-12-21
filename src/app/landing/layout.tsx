@@ -7,6 +7,10 @@ export default function LandingLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>CSI Hackathon 2025</title>
+        <link rel = "icon" href = "/favicon.ico"/>
+      </head>
       <body>
         {children}
       </body>
