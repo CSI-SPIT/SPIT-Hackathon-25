@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Card from "./Card";
+import Button from "./Button";
 
 
 export default function ParallaxComponent() {
@@ -22,7 +23,7 @@ export default function ParallaxComponent() {
 
     return (
         <div className="bg-black relative" style={{ position: "relative", width: "100%", height: "100vh" }}>
-            <img src="/logo.svg" alt="logo" style={{ position: "absolute", zIndex: 2, top: 25, left: 25 }}/>
+            <img src="/logo.svg" alt="logo" style={{ position: "absolute", zIndex: 2, top: 25, left: 25 }} />
             <motion.div
                 className="hero"
                 style={{
@@ -43,7 +44,7 @@ export default function ParallaxComponent() {
                 }}
             >
                 {cards.map((card, index) => (
-                    <div className="hidden md:block">
+                    <div key={index} className="hidden md:block">
                         <Card
                             key={index}
                             src={card.src}
@@ -68,6 +69,9 @@ export default function ParallaxComponent() {
                     }}
                 />
             </motion.div>
+            <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
+                <Button href="#" text="Click to Register" />
+            </div>
 
             <motion.div
                 style={{
@@ -81,6 +85,7 @@ export default function ParallaxComponent() {
                     width: "100%",
                     height: "100%",
                     minHeight: "100vh",
+                    // zIndex: 20,
                 }}
             >
                 <img
@@ -91,7 +96,7 @@ export default function ParallaxComponent() {
                         height: "70%",
                         objectFit: "cover",
                         position: "absolute",
-                        zIndex: 10,
+                        zIndex: 20,
                         bottom: -480,
                         left: 0,
                     }}
