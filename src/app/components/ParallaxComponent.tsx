@@ -72,7 +72,6 @@ export default function ParallaxComponent() {
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
                 <Button href="#" text="Click to Register" />
             </div>
-
             <motion.div
                 style={{
                     y: y2,
@@ -85,7 +84,6 @@ export default function ParallaxComponent() {
                     width: "100%",
                     height: "100%",
                     minHeight: "100vh",
-                    // zIndex: 20,
                 }}
             >
                 <img
