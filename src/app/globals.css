@@ -19,3 +19,74 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.title {
+  display: flex;
+  flex-direction: row; /* Default: arrange items in a row */
+  align-items: center; /* Align items by their center vertically */
+  justify-content: center; /* Optional: Center images horizontally within the container */
+  gap: 1rem; /* Add space between the images */
+}
+
+.title img {
+  display: block; /* Ensures images behave properly inside flex containers */
+  max-width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .title {
+      flex-direction: column; /* Switch to column layout for smaller screens */
+  }
+  
+  .title img {
+    width: 40%; /* Default width for all images in the title on small screens */
+}
+
+.title img.hackathon {
+    width: 80%; /* Specific width for the hackathon image */
+}
+}
+/* 
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-200%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      transform: translateX(200%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.title .spit {
+  opacity: 0;
+  transform: translateX(-200%);
+  animation: slideInLeft 2s ease-out forwards;
+  animation-delay:0.2s;
+}
+
+.title .hackathon {
+  opacity: 0;
+  transform: translateX(200%);
+  animation: slideInRight 2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.hidden {
+  opacity: 0;
+}
+ */
+
+/* Under Development */

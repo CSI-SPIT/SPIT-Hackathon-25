@@ -1,14 +1,48 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import Card from "./Card";
 import Button from "./Button";
+import Card from "./Card";
 
 
 export default function ParallaxComponent() {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 300], [0, 100]);
     const y2 = useTransform(scrollY, [0, 300], [0, -300]);
+
+    // const heroRef = useRef(null);
+
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => {
+    //             if (entry.isIntersecting) {
+    //                 // Add animation classes when in view
+    //                 const spitElement = document.getElementsByClassName("spit")[0];
+    //                 const hackathonElement = document.getElementsByClassName("hackathon")[0];
+
+    //                 if (spitElement) spitElement.classList.add("animate");
+    //                 if (hackathonElement) hackathonElement.classList.add("animate");;
+    //             }
+    //         },
+    //         {
+    //             threshold: 0.5, // Trigger when at least 50% of the element is in view
+    //         }
+    //     );
+
+    //     if (heroRef.current) {
+    //         observer.observe(heroRef.current);
+    //     }
+
+    //     return () => {
+    //         if (heroRef.current) {
+    //             observer.unobserve(heroRef.current);
+    //         }
+    //     };
+    // }, []);
+
+    //TEXT ANIMATION UNDER WORK
+
+
 
     const cards = [
         { src: "./card1.svg", alt: "card1", inputRange: [0, 300] as [number, number], outputRange: [0, -800] as [number, number], left: "50%" },
@@ -56,7 +90,21 @@ export default function ParallaxComponent() {
                         />
                     </div>
                 ))}
-                <img
+                <div className="title flex flex-row items-center justify-center gap-4 md:gap-8">
+                    <img
+                        src="/title1.png"
+                        alt="title1"
+                        className="w-[23%] h-auto object-contain spit"
+                        style={{ position: "relative", zIndex: 10 }}
+                    />
+                    <img
+                        src="/title2.png"
+                        alt="title2"
+                        className="w-[40%] h-auto object-contain hackathon"
+                        style={{ position: "relative", zIndex: 10 }}
+                    />
+                </div>
+                {/* <img
                     src="/title.svg"
                     alt="title"
                     style={{
@@ -67,7 +115,7 @@ export default function ParallaxComponent() {
                         zIndex: 10,
                         top: 80,
                     }}
-                />
+                /> */}
             </motion.div>
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
                 <Button href="#" text="Click to Register" />
