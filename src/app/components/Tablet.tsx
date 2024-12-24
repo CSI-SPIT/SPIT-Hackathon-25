@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Tablet.module.css';
 
 interface Icon {
@@ -34,6 +34,7 @@ export default function Tablet() {
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                     {icons.map((icon, index) => (
                         <div key={index} className="flex justify-center">
+                            {/* icons mapped */}
                             <input
                                 type="radio"
                                 name="icon"
@@ -42,6 +43,7 @@ export default function Tablet() {
                                 onChange={() => handleSelect(index)}
                                 className="hidden"
                             />
+                            {/* code to make icon blink when selected */}
                             <label htmlFor={`icon-${index}`} className={`cursor-pointer ${selectedIcon === index ? styles.blink : ''}`}>
                                 <div className="flex flex-col w-fill h-fill items-center justify-center">
                                     <img

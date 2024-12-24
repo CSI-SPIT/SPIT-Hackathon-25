@@ -1,5 +1,5 @@
-import "./globals.css";
 import "nes.css/css/nes.css";
+import "./globals.css";
 
 export default function RootLayout({
   children,

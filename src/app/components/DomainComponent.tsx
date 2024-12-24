@@ -24,3 +24,5 @@ const DomainComponent: React.FC = () => {
 };
 
 export default DomainComponent;
+
+// tablet is nested in this

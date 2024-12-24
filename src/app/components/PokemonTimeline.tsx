@@ -1,6 +1,6 @@
-"use client"
-import React from 'react';
+"use client";
 import { motion } from 'framer-motion';
+import React from 'react';
 
 interface TimelineEventProps {
     date: string;
@@ -11,10 +11,14 @@ interface TimelineEventProps {
     isLeft: boolean;
 }
 
+// Component to use in Pokemon Timeline repetitively
 const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description, startTime, endTime, isLeft }) => {
     return (
+        // Animation left to right
         <motion.div
-            className={`flex ${isLeft ? 'flex-row' : 'flex-row-reverse'} w-full items-center gap-4 my-8`}
+            className={`flex w-full items-center gap-4 my-8 ${
+                isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+            } flex-col items-center`}
             initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -22,7 +26,9 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
         >
             {/* Content */}
             <motion.div
-                className={`w-1/2 p-6 rounded-lg shadow-lg ${isLeft ? 'text-right' : 'text-left'}`}
+                className={`p-6 rounded-lg shadow-lg md:w-1/2 w-full ${
+                    isLeft ? 'md:text-right' : 'md:text-left'
+                } text-center`}
                 whileHover={{ scale: 1.02 }}
                 style={{ backgroundColor: '#FFFFFF', borderLeft: '4px solid #FF1111' }}
             >
@@ -44,7 +50,7 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
             />
 
             {/* Empty space for alignment */}
-            <div className="w-1/2" />
+            <div className="md:w-1/2 hidden md:block" />
         </motion.div>
     );
 };
@@ -89,13 +95,14 @@ const PokemonTimeline: React.FC = () => {
 
             {/* Timeline line */}
             <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200" />
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block" />
 
                 {/* Events */}
                 {events.map((event, index) => (
                     <TimelineEvent
                         key={event.date}
                         {...event}
+                        // isLeft for alternating animation on desktop
                         isLeft={index % 2 === 0}
                     />
                 ))}
