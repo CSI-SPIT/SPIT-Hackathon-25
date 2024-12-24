@@ -125,7 +125,7 @@ export default function ParallaxComponent() {
                 /> */}
             </motion.div>
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
-                <Button href="#" text="Click to Register" />
+                <Button href="https://unstop.com/p/spit-hackathon-2025-sardar-patel-institute-of-technology-spit-mumbai-1306391?lb=w53aomp" text="Click to Register" />
             </div>
             <motion.div
                 style={{
