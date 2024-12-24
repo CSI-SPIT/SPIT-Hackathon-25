@@ -12,11 +12,11 @@ const DomainComponent: React.FC = () => {
                 backgroundSize: "33px",
                 backgroundAttachment: "scroll",
                 paddingBottom: 0,
-                minHeight: "100vh",
+                minHeight: "60vh",
                 backgroundColor: "#22B14C",
             }}
         >
-            <div className="flex flex-row items-center justify-center h-screen">
+            <div className="flex flex-row items-center justify-center h-[80vh]">
                 <Tablet />
             </div>
         </div>

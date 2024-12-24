@@ -16,9 +16,8 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
     return (
         // Animation left to right
         <motion.div
-            className={`flex w-full items-center gap-4 my-8 ${
-                isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-            } flex-col items-center`}
+            className={`flex w-full items-center gap-4 my-8 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                } flex-col items-center`}
             initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -26,9 +25,8 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
         >
             {/* Content */}
             <motion.div
-                className={`p-6 rounded-lg shadow-lg md:w-1/2 w-full ${
-                    isLeft ? 'md:text-right' : 'md:text-left'
-                } text-center`}
+                className={`p-6 rounded-lg shadow-lg md:w-1/2 w-full ${isLeft ? 'md:text-right' : 'md:text-left'
+                    } text-center`}
                 whileHover={{ scale: 1.02 }}
                 style={{ backgroundColor: '#FFFFFF', borderLeft: '4px solid #FF1111' }}
             >
@@ -82,30 +80,42 @@ const PokemonTimeline: React.FC = () => {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto p-8">
-            {/* Title */}
-            <motion.h2
-                className="text-3xl font-bold text-center mb-12 text-red-600"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                Hackathon Timeline
-            </motion.h2>
+        <div
+            style={{
+                backgroundImage: "url('/outro1.svg')",
+                backgroundPosition: "50% 0",
+                backgroundRepeat: "repeat-x",
+                backgroundSize: "33px",
+                backgroundAttachment: "scroll",
+                paddingBottom: 0,
+                minHeight: "100vh",
+            }}
+        >
+            <div className="max-w-4xl mx-auto p-8">
+                {/* Title */}
+                <motion.h2
+                    className="text-3xl font-bold text-center mb-12 mt-32 text-red-600"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Hackathon Timeline
+                </motion.h2>
 
-            {/* Timeline line */}
-            <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block" />
+                {/* Timeline line */}
+                <div className="relative">
+                    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block" />
 
-                {/* Events */}
-                {events.map((event, index) => (
-                    <TimelineEvent
-                        key={event.date}
-                        {...event}
-                        // isLeft for alternating animation on desktop
-                        isLeft={index % 2 === 0}
-                    />
-                ))}
+                    {/* Events */}
+                    {events.map((event, index) => (
+                        <TimelineEvent
+                            key={event.date}
+                            {...event}
+                            // isLeft for alternating animation on desktop
+                            isLeft={index % 2 === 0}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
