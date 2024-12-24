@@ -1,6 +1,7 @@
+import "./globals.css";
 import "nes.css/css/nes.css";
 
-export default function LandingLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

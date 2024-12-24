@@ -11,7 +11,6 @@ const icons: Icon[] = [
     { src: '/rocket.svg', alt: 'AI/ML' },
     { src: '/mobile.svg', alt: 'Mobile-Dev' },
     { src: '/web.svg', alt: 'Web-Dev' },
-    { src: '/finan.svg', alt: 'Fin-Tech' },
 ];
 
 export default function Tablet() {

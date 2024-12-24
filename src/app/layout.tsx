@@ -1,4 +1,5 @@
 import "./globals.css";
+import "nes.css/css/nes.css";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>CSI Hackathon 2025</title>
-        <link rel="icon" href="/logo.svg" />
+        <link rel = "icon" href = "/favicon.ico"/>
       </head>
       <body>
         {children}
