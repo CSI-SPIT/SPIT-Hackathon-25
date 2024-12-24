@@ -27,13 +27,13 @@ export default function Tablet() {
                     <h2 className={styles.testFont}>SPIT Hackathon 2025</h2>
                     <div className="max-w-96">
                         <p className={styles.para}>
-                            Following tradition, CSI-SPIT is conducting the annual 24-hour SPIT Hackathon in February 2024. With a great team and skilled panel of judges, this hackathon will be an ideal platform to put student's knowledge to use and network with peers.
+                            Following tradition, CSI-SPIT is conducting the annual 24-hour SPIT Hackathon in February 2024. With a great team and skilled panel of judges, this hackathon will be an ideal platform to put students&apos; knowledge to use and network with peers.
                         </p>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                     {icons.map((icon, index) => (
-                        <div key={index} className='flex justify-center'>
+                        <div key={index} className="flex justify-center">
                             <input
                                 type="radio"
                                 name="icon"
@@ -47,7 +47,7 @@ export default function Tablet() {
                                     <img
                                         src={icon.src}
                                         alt={icon.alt}
-                                        className={`h-[68px]`}
+                                        className="h-[68px]"
                                     />
                                     <p className={styles.para}>{icon.alt}</p>
                                 </div>

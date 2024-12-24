@@ -1,6 +1,8 @@
 "use client";
+import React from 'react';
 import Tablet from "./Tablet";
-export default function DomainComponent() {
+
+const DomainComponent: React.FC = () => {
     return (
         <div
             style={{
@@ -15,9 +17,10 @@ export default function DomainComponent() {
             }}
         >
             <div className="flex flex-row items-center justify-center h-screen">
-                <Tablet/>
+                <Tablet />
             </div>
         </div>
     );
-}
+};
 
+export default DomainComponent;

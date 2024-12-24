@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "./Button";
 import Card from "./Card";
+import Image from 'next/image';
 
 
 export default function ParallaxComponent() {
@@ -57,7 +58,13 @@ export default function ParallaxComponent() {
 
     return (
         <div className="bg-black relative" style={{ position: "relative", width: "100%", height: "100vh" }}>
-            <img src="/logo.svg" alt="logo" style={{ position: "absolute", zIndex: 2, top: 25, left: 25 }} />
+            <Image
+                src="/logo.svg"
+                alt="logo"
+                width={48} // Set appropriate width
+                height={65} // Set appropriate height
+                style={{ position: "absolute", zIndex: 2, top: 25, left: 25 }}
+            />
             <motion.div
                 className="hero"
                 style={{

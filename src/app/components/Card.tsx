@@ -1,15 +1,16 @@
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform, MotionValue } from "framer-motion";
+import Image from 'next/image';
 
 interface CardProps {
   src: string;
   alt: string;
-  scrollY: any;
+  scrollY: MotionValue<number>;
   inputRange: [number, number];
   outputRange: [number, number];
   left: string;
 }
 
-export default function Card({ src, alt, scrollY, inputRange, outputRange, left }: CardProps) {
+const Card: React.FC<CardProps> = ({ src, alt, scrollY, inputRange, outputRange, left }) => {
   const y = useTransform(scrollY, inputRange, outputRange);
 
   return (
@@ -28,15 +29,14 @@ export default function Card({ src, alt, scrollY, inputRange, outputRange, left 
         zIndex: 10,
       }}
     >
-      <img
+      <Image
         src={src}
         alt={alt}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "contain",
-        }}
+        layout="fill"
+        objectFit="contain"
       />
     </motion.div>
   );
-}
+};
+
+export default Card;
