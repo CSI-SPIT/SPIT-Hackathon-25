@@ -5,6 +5,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --pixel-bg: lightblue; /* Inner background color */
+	--pixel-border: black; /* Inner border color: */
+	--pixel-border-2: white; /* Middle border color: */
+	--pixel-border-3: var(--pixel-border); /* Outer border color */
+	--pixel: .125rem; /* Pixel size */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +52,8 @@ body {
     width: 80%; /* Specific width for the hackathon image */
 }
 }
+
+
 /* 
 @keyframes slideInLeft {
   from {

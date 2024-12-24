@@ -78,7 +78,7 @@ export default function ParallaxComponent() {
                 }}
             >
                 {cards.map((card, index) => (
-                    <div key={index} className="hidden md:block">
+                    <div key={index} className="hidden lg:block">
                         <Card
                             key={index}
                             src={card.src}
@@ -90,7 +90,7 @@ export default function ParallaxComponent() {
                         />
                     </div>
                 ))}
-                <div className="title flex flex-row items-center justify-center gap-4 md:gap-8">
+                <div className="title flex flex-row pb-20 items-center justify-center gap-4 lg:gap-8">
                     <img
                         src="/title1.png"
                         alt="title1"
