@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Jersey+10&display=swap');
+@font-face {
+    font-family: 'Pixie';
+    font-style: normal;
+    src : url('../fonts/DeterminationMonoWebRegular-Z5oq.ttf') format('ttf');
+}
 
+@font-face {
+    font-family: 'Doto';
+    font-style: normal;
+    font-weight: 900;
+    src: url('https://fonts.gstatic.com/s/doto/v14/1cX3aULHBpDMsHYW_ESO.woff2') format('woff2');
+}
 .testFont {
     font-family: "Doto", serif;
     font-optical-sizing: auto;
