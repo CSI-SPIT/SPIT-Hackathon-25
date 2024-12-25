@@ -1,10 +1,9 @@
 "use client";
-import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "./Button";
 import Card from "./Card";
 import Image from 'next/image';
-const SmoothScroll = dynamic(()=>import('./SmoothScroll'))
+
 
 export default function ParallaxComponent() {
     const { scrollY } = useScroll();
