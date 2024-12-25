@@ -1,15 +1,15 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "./Button";
 import Card from "./Card";
 import Image from 'next/image';
-
+const SmoothScroll = dynamic(()=>import('./SmoothScroll'))
 
 export default function ParallaxComponent() {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 300], [0, 100]);
-    const y2 = useTransform(scrollY, [0, 300], [0, -300]);
+    const y2 = useTransform(scrollY, [0, 600], [0, -300]);
 
     // const heroRef = useRef(null);
 
@@ -86,43 +86,38 @@ export default function ParallaxComponent() {
             >
                 {cards.map((card, index) => (
                     <div key={index} className="hidden lg:block">
-                        <Card
-                            key={index}
-                            src={card.src}
-                            alt={card.alt}
-                            scrollY={scrollY}
-                            inputRange={card.inputRange}
-                            outputRange={card.outputRange}
-                            left={card.left}
-                        />
+                            <Card
+                                key={index}
+                                src={card.src}
+                                alt={card.alt}
+                                scrollY={scrollY}
+                                inputRange={card.inputRange}
+                                outputRange={card.outputRange}
+                                left={card.left}
+                            />
                     </div>
                 ))}
-                <div className="title flex flex-row pb-20 items-center justify-center gap-4 lg:gap-8">
-                    <img
-                        src="/title1.png"
-                        alt="title1"
-                        className="w-[23%] h-auto object-contain spit"
-                        style={{ position: "relative", zIndex: 10 }}
-                    />
-                    <img
-                        src="/title2.png"
-                        alt="title2"
-                        className="w-[40%] h-auto object-contain hackathon"
-                        style={{ position: "relative", zIndex: 10 }}
+                <div className="flex flex-col items-center pb-20">
+                    <div className="title flex flex-row items-center justify-center gap-4 lg:gap-8">
+                        <img
+                            src="/title1.svg"
+                            alt="title1"
+                            className="w-[23%] h-auto object-contain spit"
+                            style={{ position: "relative", zIndex: 10 }}
+                        />
+                        <img
+                            src="/title2.svg"
+                            alt="title2"
+                            className="w-[40%] h-auto object-contain hackathon"
+                            style={{ position: "relative", zIndex: 10 }}
+                        />
+                    </div>
+                    <img 
+                        src="/year.svg" 
+                        alt="year" 
+                        className="w-[23%] h-auto object-contain lg:w-[15%]"
                     />
                 </div>
-                {/* <img
-                    src="/title.svg"
-                    alt="title"
-                    style={{
-                        width: "50%",
-                        height: "60%",
-                        objectFit: "contain",
-                        position: "absolute",
-                        zIndex: 10,
-                        top: 80,
-                    }}
-                /> */}
             </motion.div>
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
                 <Button href="https://unstop.com/p/spit-hackathon-2025-sardar-patel-institute-of-technology-spit-mumbai-1306391?lb=w53aomp" text="Click to Register" />

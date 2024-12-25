@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import React from 'react';
+import styles from './PokemonTimeline.module.css'
 
 interface TimelineEventProps {
     date: string;
@@ -25,13 +26,12 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
         >
             {/* Content */}
             <motion.div
-                className={`p-6 rounded-lg shadow-lg md:w-1/2 w-full ${isLeft ? 'md:text-right' : 'md:text-left'
+                className={`${styles.pixelBorder} ${styles.para} p-6 rounded-lg shadow-lg md:w-1/2 w-full ${isLeft ? 'md:text-right' : 'md:text-left'
                     } text-center`}
                 whileHover={{ scale: 1.02 }}
-                style={{ backgroundColor: '#FFFFFF', borderLeft: '4px solid #FF1111' }}
             >
                 <h3 className="text-xl font-bold text-gray-800">{date}</h3>
-                <h4 className="text-lg font-semibold text-red-600 mt-2">{title}</h4>
+                <h4 className="text-lg font-semibold text-green-600 mt-2">{title}</h4>
                 <p className="text-gray-600 mt-2">{description}</p>
                 {startTime && endTime && (
                     <div className="mt-2 text-sm text-gray-500">
@@ -43,7 +43,7 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
 
             {/* Timeline dot */}
             <motion.div
-                className="w-6 h-6 rounded-full bg-red-600 border-4 border-white shadow-lg"
+                className="w-6 h-6 rounded-full bg-green-600 border-4 border-white shadow-lg z-20"
                 whileHover={{ scale: 1.2, backgroundColor: '#CC0000' }}
             />
 
@@ -72,7 +72,7 @@ const PokemonTimeline: React.FC = () => {
         },
         {
             date: "8 Feb 25",
-            title: "S.P.I.T Hackathon 2025",
+            title: "SPIT Hackathon 2025",
             description: "The 24-hour offline hackathon at Sardar Patel Institute of Technology",
             startTime: "08 Feb 25, 08:00 AM IST",
             endTime: "09 Feb 25, 01:00 PM IST"
@@ -81,6 +81,7 @@ const PokemonTimeline: React.FC = () => {
 
     return (
         <div
+            className=''
             style={{
                 backgroundImage: "url('/outro1.svg')",
                 backgroundPosition: "50% 0",
@@ -89,12 +90,13 @@ const PokemonTimeline: React.FC = () => {
                 backgroundAttachment: "scroll",
                 paddingBottom: 0,
                 minHeight: "100vh",
+                backgroundColor: "#BC3A3A"
             }}
         >
             <div className="max-w-4xl mx-auto p-8">
                 {/* Title */}
                 <motion.h2
-                    className="text-3xl font-bold text-center mb-12 mt-32 text-red-600"
+                    className={`${styles.title} text-3xl font-bold text-center mb-12 mt-32`}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}

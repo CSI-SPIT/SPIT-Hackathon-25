@@ -27,7 +27,7 @@ export default function Tablet() {
                     <h2 className={styles.testFont}>SPIT Hackathon 2025</h2>
                     <div className="max-w-96">
                         <p className={styles.para}>
-                            Following tradition, CSI-SPIT is conducting the annual 24-hour SPIT Hackathon in February 2024. With a great team and skilled panel of judges, this hackathon will be an ideal platform to put students&apos; knowledge to use and network with peers.
+                            Following tradition, CSI-SPIT is conducting the annual 24-hour SPIT Hackathon in February 2025. With a great team and skilled panel of judges, this hackathon will be an ideal platform to put students&apos; knowledge to use and network with peers.
                         </p>
                     </div>
                 </div>
