@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 const ParallaxComponent = dynamic(() => import("./components/ParallaxComponent"));
 const DomainComponent = dynamic(() => import("./components/DomainComponent"));
 const PokemonComponent = dynamic(()=>import('./components/PokemonTimeline'));
+const Sponsors = dynamic(()=>import('./components/Sponsors'));
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
       <div className="hidden md:block pt-36 bg-[#121212]"></div>
       <DomainComponent/>
       <PokemonComponent/>
+      <Sponsors/>
     </div>
   );
 }
