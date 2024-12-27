@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 const ParallaxComponent = dynamic(() => import("./components/ParallaxComponent"));
 const DomainComponent = dynamic(() => import("./components/DomainComponent"));
 const PokemonComponent = dynamic(()=>import('./components/PokemonTimeline'));
-const SmoothScroll = dynamic(()=>import('./components/SmoothScroll'));
 
 export default function Page() {
   return (
