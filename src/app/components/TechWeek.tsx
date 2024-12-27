@@ -29,7 +29,7 @@ function Section({ title, text, date }: SectionProps) {
   return (
     <div className={`block relative md:flex`}>
       <div className={`${styles.pixelBorder2}`}>
-        <div className="flex justify-between p-4">
+        <div className="block px-4 md:flex justify-between">
             <h2 className={`${styles.testFont}`}>{title}</h2>
             <img src={date} alt="" />
         </div>

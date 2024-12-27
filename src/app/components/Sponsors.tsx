@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import styles from './PokemonTimeline.module.css'
 
 const Sponsors: React.FC = () => {
     return (
@@ -16,8 +17,8 @@ const Sponsors: React.FC = () => {
             }}
         >
             <div className='h-[30vh] w-full'></div>
-            <div className="flex flex-col items-center justify-center min-h-screen">
-                
+            <div className="flex flex-col items-center min-h-screen">
+                <div className={styles.title}> Sponsors </div>
             </div>
         </div>
     );
