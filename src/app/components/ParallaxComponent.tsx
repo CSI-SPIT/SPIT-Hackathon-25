@@ -45,14 +45,14 @@ export default function ParallaxComponent() {
 
 
     const cards = [
-        { src: "./card1.svg", alt: "card1", inputRange: [0, 300] as [number, number], outputRange: [0, -800] as [number, number], left: "50%" },
-        { src: "./card2.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -1000] as [number, number], left: "25%" },
-        { src: "./card3.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -700] as [number, number], left: "75%" },
-        { src: "./card4.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -1000] as [number, number], left: "80%" },
-        { src: "./card5.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -600] as [number, number], left: "15%" },
-        { src: "./card6.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -800] as [number, number], left: "45%" },
-        { src: "./card7.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -700] as [number, number], left: "60%" },
-        { src: "./card8.svg", alt: "card2", inputRange: [0, 300] as [number, number], outputRange: [0, -800] as [number, number], left: "30%" },
+        { src: "./card1.svg", alt: "card1", inputRange: [0, 600] as [number, number], outputRange: [0, -800] as [number, number], left: "50%" },
+        { src: "./card2.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -1000] as [number, number], left: "25%" },
+        { src: "./card3.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -700] as [number, number], left: "75%" },
+        { src: "./card4.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -1000] as [number, number], left: "80%" },
+        { src: "./card5.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -600] as [number, number], left: "15%" },
+        { src: "./card6.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -800] as [number, number], left: "45%" },
+        { src: "./card7.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -700] as [number, number], left: "60%" },
+        { src: "./card8.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -800] as [number, number], left: "30%" },
     ];
 
     return (
@@ -121,34 +121,36 @@ export default function ParallaxComponent() {
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
                 <Button href="https://unstop.com/p/spit-hackathon-2025-sardar-patel-institute-of-technology-spit-mumbai-1306391?lb=w53aomp" text="Register" />
             </div>
-            <motion.div
-                style={{
-                    y: y2,
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    position: "absolute",
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    minHeight: "100vh",
-                }}
-            >
-                <img
-                    src="/parallax.svg"
-                    alt="Parallax"
+            <div className="hidden md:block">
+                <motion.div
                     style={{
-                        width: "100%",
-                        height: "70%",
-                        objectFit: "cover",
+                        y: y2,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
                         position: "absolute",
-                        zIndex: 20,
-                        bottom: -480,
                         left: 0,
+                        width: "100%",
+                        height: "100%",
+                        minHeight: "100vh",
                     }}
-                />
-            </motion.div>
+                >
+                    <img
+                        src="/parallax.svg"
+                        alt="Parallax"
+                        style={{
+                            width: "100%",
+                            height: "70%",
+                            objectFit: "cover",
+                            position: "absolute",
+                            zIndex: 20,
+                            bottom: -480,
+                            left: 0,
+                        }}
+                    />
+                </motion.div>
+            </div>
         </div>
     );
 }

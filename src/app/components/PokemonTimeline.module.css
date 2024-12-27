@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Jersey+10&display=swap');
-@font-face {
-    font-family: 'Pixie';
-    font-style: normal;
-    src : url('../fonts/DeterminationMonoWebRegular-Z5oq.ttf') format('ttf');
-}
 
 @font-face {
     font-family: 'Doto';
@@ -26,6 +21,7 @@
     font-weight: 900;
     font-style: normal;
     font-variation-settings: "ROND" 0;
+    color: #2e2e2e;
 }
 
 .pixelBorder {

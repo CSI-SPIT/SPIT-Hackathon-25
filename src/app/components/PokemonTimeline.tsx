@@ -1,7 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import React from 'react';
-import styles from './PokemonTimeline.module.css'
+import styles from './PokemonTimeline.module.css';
 
 interface TimelineEventProps {
     date: string;
@@ -20,7 +20,8 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
             className={`flex w-full items-center gap-4 my-8 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
                 } flex-col items-center`}
             initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: isLeft ? 50 : -50 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
         >
@@ -30,11 +31,11 @@ const TimelineEvent: React.FC<TimelineEventProps> = ({ date, title, description,
                     } text-center`}
                 whileHover={{ scale: 1.02 }}
             >
-                <h3 className="text-xl font-bold text-gray-800">{date}</h3>
-                <h4 className="text-lg font-semibold text-green-600 mt-2">{title}</h4>
-                <p className="text-gray-600 mt-2">{description}</p>
+                <h3 className="text-xl text-black">{date}</h3>
+                <h4 className="text-lg text-green-800 mt-2">{title}</h4>
+                <p className="text-gray-900 mt-2">{description}</p>
                 {startTime && endTime && (
-                    <div className="mt-2 text-sm text-gray-500">
+                    <div className="mt-2 text-sm text-gray-700">
                         <p>Start: {startTime}</p>
                         <p>End: {endTime}</p>
                     </div>
@@ -99,6 +100,7 @@ const PokemonTimeline: React.FC = () => {
                     className={`${styles.title} text-3xl font-bold text-center mb-12 mt-32`}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                 >
                     Hackathon Timeline

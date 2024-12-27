@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Tablet from "./Tablet";
+import TechWeek from './TechWeek';
 
 const DomainComponent: React.FC = () => {
     return (
@@ -16,8 +17,12 @@ const DomainComponent: React.FC = () => {
                 backgroundColor: "#22B14C",
             }}
         >
-            <div className="flex flex-row items-center justify-center h-[80vh]">
+            <div className='h-[30vh] w-full'></div>
+            <div className="flex flex-col items-center justify-center min-h-screen">
                 <Tablet />
+                <div className="mt-14">
+                    <TechWeek />
+                </div>
             </div>
         </div>
     );
