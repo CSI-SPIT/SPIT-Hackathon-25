@@ -29,7 +29,7 @@ export default function Tablet() {
                             <p>Time: </p>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4 pb-20">
+                    <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 mt-4 pb-20">
                         {icons.map((icon, index) => (
                             <div key={index} className={`${styles.blink} flex justify-center`}>
                                     <div className="flex flex-col w-fill h-fill items-center justify-center">
