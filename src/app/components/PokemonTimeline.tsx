@@ -68,7 +68,7 @@ const PokemonTimeline: React.FC = () => {
             date: "25 Dec 24",
             title: "Round 1 - Submission Round",
             description: "Teams from initial registration are shortlisted for the final 24-hour hackathon based on this round. Participants are expected to give an abstract solution to the problem statement mentioned.",
-            startTime: "25 Dec 24, 12:00 PM IST",
+            startTime: "25 Dec 24, 5:00 PM IST",
             endTime: "26 Jan 25, 11:59 PM IST"
         },
         {

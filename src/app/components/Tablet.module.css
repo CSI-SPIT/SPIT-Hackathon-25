@@ -1,19 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Press+Start+2P&display=swap');
 @font-face {
     font-family: 'Pixie';
     font-style: normal;
     src : url('../fonts/DeterminationMonoWebRegular-Z5oq.ttf') format('ttf');
 }
 
-@font-face {
-    font-family: 'Doto';
-    font-style: normal;
-    font-weight: 900;
-    src: url('../fonts/Doto-Black.ttf') format('ttf');
-}
-
 .testFont {
-    font-family: "Doto", serif;
+    font-family: var(--font-doto), serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
@@ -22,7 +14,7 @@
 	color: rgb(0, 53, 8);
 }
 .para {
-	font-family: "Doto", serif;
+    font-family: var(--font-doto), serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;

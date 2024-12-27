@@ -1,4 +1,3 @@
-import "nes.css/css/nes.css";
 import dynamic from "next/dynamic";
 
 // Dynamically import the ParallaxComponent to ensure it only runs on the client side
