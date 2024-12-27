@@ -20,7 +20,7 @@ const DomainComponent: React.FC = () => {
             <div className='h-[30vh] w-full'></div>
             <div className="flex flex-col items-center justify-center min-h-screen">
                 <Tablet />
-                <div className="mt-14">
+                <div className="my-14">
                     <TechWeek />
                 </div>
             </div>
