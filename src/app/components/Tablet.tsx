@@ -23,10 +23,6 @@ export default function Tablet() {
                             <p className="mb-10">
                                 Following tradition, CSI-SPIT is conducting the annual 24-hour SPIT Hackathon in February 2025. With a great team and skilled panel of judges, this hackathon will be an ideal platform to put students&apos; knowledge to use and network with peers.
                             </p>
-                            <p>Team Size: </p>
-                            <p>Venue: </p>
-                            <p>Date: </p>
-                            <p>Time: </p>
                         </div>
                     </div>
                     <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 mt-4 pb-20">

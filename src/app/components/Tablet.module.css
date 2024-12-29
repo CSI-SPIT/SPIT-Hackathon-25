@@ -10,7 +10,7 @@
     font-weight: 900;
     font-style: normal;
     font-variation-settings: "ROND" 0;
-    font-size: 2em;
+    font-size: 2rem;
 	color: rgb(0, 53, 8);
 }
 .para {
@@ -19,7 +19,7 @@
     font-weight: 900;
     font-style: normal;
     font-variation-settings: "ROND" 0;
-    font-size: 1em;
+    font-size: 1.25rem;
 	color: rgb(0, 53, 8);
 }
 
