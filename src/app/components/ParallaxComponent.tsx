@@ -1,9 +1,8 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from 'next/image';
 import Button from "./Button";
 import Card from "./Card";
-import Image from 'next/image';
-
 
 export default function ParallaxComponent() {
     const { scrollY } = useScroll();
@@ -121,6 +120,7 @@ export default function ParallaxComponent() {
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
                 <Button href="https://unstop.com/p/spit-hackathon-2025-sardar-patel-institute-of-technology-spit-mumbai-1306391?lb=w53aomp" text="Register" />
             </div>
+            {/* <StickyButton /> //edit this it will be perfect */}
             <div className="hidden md:block">
                 <motion.div
                     style={{
