@@ -54,6 +54,10 @@ export default function ParallaxComponent() {
         { src: "./card8.svg", alt: "card2", inputRange: [0, 600] as [number, number], outputRange: [0, -800] as [number, number], left: "30%" },
     ];
 
+    const handleClick = (url:string) =>{
+        window.open(url, '_blank');
+    };
+
     return (
         <div className="bg-black relative" style={{ position: "relative", width: "100%", height: "100vh" }}>
             <Image
@@ -62,6 +66,7 @@ export default function ParallaxComponent() {
                 width={48} // Set appropriate width
                 height={65} // Set appropriate height
                 style={{ position: "absolute", zIndex: 2, top: 25, left: 25 }}
+                onClick={()=>handleClick('https://csi.spit.ac.in/')}
             />
             <motion.div
                 className="hero"
@@ -120,7 +125,7 @@ export default function ParallaxComponent() {
             <div className="absolute inset-x-0 bottom-[100px] flex justify-center z-10 items-center">
                 <Button href="https://unstop.com/p/spit-hackathon-2025-sardar-patel-institute-of-technology-spit-mumbai-1306391?lb=w53aomp" text="Register" />
             </div>
-            {/* <StickyButton /> //edit this it will be perfect */}
+            {/* <StickyButton /> */}
             <div className="hidden md:block">
                 <motion.div
                     style={{

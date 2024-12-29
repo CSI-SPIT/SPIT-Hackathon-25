@@ -27,13 +27,13 @@ const Footer: React.FC = () => {
         
             <div className='w-full'>
                 <div className='flex justify-center gap-10'>
-                    <img src="/github.svg" alt="github" className='w-[40px]'/>
-                    <img src="/insta.svg" alt="github" className='w-[40px]'/>
-                    <img src="/linkdin.svg" alt="github" className='w-[40px]'/>
+                    <img src="/github.svg" alt="github" className='w-[40px]' onClick={()=>handleLinkPress('https://github.com/CSI-SPIT')}/>
+                    <img src="/insta.svg" alt="instagram" className='w-[40px]' onClick={()=>handleLinkPress('https://instagram.com/csispit')}/>
+                    <img src="/linkdin.svg" alt="linkedin" className='w-[40px]' onClick={()=>handleLinkPress('https://linkedin.com/company/s-p-i-t-csi')}/>
                 </div>
                 <div className="w-full border-t border-gray-800 pt-5 mt-2">
                     <p className="text-white text-center text-sm">
-                        DEVELOPED WITH <span className="text-cyan-400 font-medium">ISNOMANIA</span> AND{' '}
+                        DEVELOPED WITH <span className="text-cyan-400 font-medium">INSOMNIA</span> AND{' '}
                         <span className="text-cyan-400 font-medium">CAFFIENE</span>
                     </p>
                 </div>
