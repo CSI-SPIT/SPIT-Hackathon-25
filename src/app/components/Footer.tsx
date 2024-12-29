@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 <div className="w-full border-t border-gray-800 pt-5 mt-2">
                     <p className="text-white text-center text-sm">
                         DEVELOPED WITH <span className="text-cyan-400 font-medium">INSOMNIA</span> AND{' '}
-                        <span className="text-cyan-400 font-medium">CAFFIENE</span>
+                        <span className="text-cyan-400 font-medium">CAFFEINE</span>
                     </p>
                 </div>
             </div>
