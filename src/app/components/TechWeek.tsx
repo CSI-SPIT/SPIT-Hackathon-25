@@ -16,7 +16,7 @@ export default function TechWeek() {
   ];
 
   return (
-    <div className='flex w-full flex-col items-center mb-16 gap-5 lg:w-[60vw]'>
+    <div className='flex w-[23rem] flex-col items-center mb-16 gap-5 lg:w-[60vw]'>
       <div className={styles.title}> Tech Week </div>
       {sections.map((section, index) => (
         <Section key={index} title={section.title} text={section.text} date={section.date} />
