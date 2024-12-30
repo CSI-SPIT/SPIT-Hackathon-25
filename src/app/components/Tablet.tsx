@@ -14,7 +14,7 @@ const icons: Icon[] = [
 
 export default function Tablet() {
     return (
-        <div className='relative'>
+        <div className='relative mt-96 md:mt-1'>
             <div className={styles.pixelBorder}>
                 <div className="block p-5 md:flex gap-10">
                     <div>
