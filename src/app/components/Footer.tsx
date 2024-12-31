@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         
             <div className='w-full min-h-56 flex flex-col justify-end'>
                 <div className='flex justify-center gap-10'>
-                    <img src="/github.svg" alt="github" className='w-[40px]' onClick={()=>handleLinkPress('https://github.com/CSI-SPIT')}/>
+                    <img src="/github.svg" alt="github" className='w-[40px]' onClick={()=>handleLinkPress('https://github.com/techcsispit')}/>
                     <img src="/insta.svg" alt="instagram" className='w-[40px]' onClick={()=>handleLinkPress('https://instagram.com/csispit')}/>
                     <img src="/linkdin.svg" alt="linkedin" className='w-[40px]' onClick={()=>handleLinkPress('https://linkedin.com/company/s-p-i-t-csi')}/>
                 </div>
