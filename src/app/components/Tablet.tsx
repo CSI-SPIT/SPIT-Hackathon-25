@@ -8,7 +8,7 @@ interface Icon {
 const icons: Icon[] = [
     { src: '/bitcoin.svg', alt: 'Blockchain' },
     { src: '/rocket.svg', alt: 'AI/ML' },
-    { src: '/mobile.svg', alt: 'Mobile-Dev' },
+    { src: '/mobile.svg', alt: 'App-Dev' },
     { src: '/web.svg', alt: 'Web-Dev' },
 ];
 
