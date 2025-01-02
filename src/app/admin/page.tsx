@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { isAuthenticated } from '@/Utils/Auth';
 import { redirect } from 'next/navigation';
+import CSVSetting from '../components/CSVsetting';
 
 const Admin: React.FC = () => {
   const [auth, setAuth] = useState(false);
@@ -26,9 +27,12 @@ const Admin: React.FC = () => {
 
   return (
     <main className="text-center h-screen flex justify-center items-center">
-      <div>
-        <Dashboard />
-      </div>
+        <div>
+          <Dashboard />
+        </div>
+        <div>
+          <CSVSetting />
+        </div>
     </main>
   );
 };
