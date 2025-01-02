@@ -1,17 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Press+Start+2P&display=swap'); */
-
-@font-face {
-    font-family: 'Press Start 2P';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/pressstart2p/v14/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
-} 
 .title {
     background: #2e2e2e;
     padding: 15px;
     color: #fff;
     margin-bottom: 30px;
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--font-press-start), system-ui;
     font-size: 24px;
     box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff1f, inset 0px -5px #00000030;
 }
@@ -19,18 +11,19 @@
 .button {
     color: #fff;
     background-color: #bc3a3a;
-    font-family: 'Press Start 2P', serif;
+    font-family: var(--font-press-start), serif;
     font-weight: 400;
     font-style: normal;
     padding: 15px 40px 15px 40px;
     margin: 10px;
     font-size: 24px;
     border: 0;
-    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36 ;
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
     cursor: pointer;
 }
+
 .button:hover {
     transform: translateY(5px);
-    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,inset 0px 5px #00000038;
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
     text-decoration: none;
 }
