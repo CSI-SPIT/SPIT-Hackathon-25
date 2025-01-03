@@ -4,6 +4,7 @@ import axios from 'axios';
 import { isAuthenticated } from '@/Utils/Auth';
 import { redirect } from 'next/navigation';
 import CSVSetting from '../components/CSVsetting';
+import TeamSearch from '../components/TeamSearch';
 
 const Admin: React.FC = () => {
   const [auth, setAuth] = useState(false);
@@ -26,11 +27,12 @@ const Admin: React.FC = () => {
   }
 
   return (
-    <main className="text-center h-screen flex justify-center items-center">
-        <div>
+    <main className="h-full text-center flex justify-center items-start">
+        <div className='min-w-[15%]'>
           <Dashboard />
         </div>
-        <div>
+          <div className='w-full'><TeamSearch/></div>
+        <div className='min-w-[15%]'>
           <CSVSetting />
         </div>
     </main>

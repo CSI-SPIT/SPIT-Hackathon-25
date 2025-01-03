@@ -15,7 +15,7 @@ const PageLayout: React.FC<AdminLayoutProps> = ({ children }) => {
             </header>
 
             {/* Main Content */}
-            <main className="flex-grow container mx-auto p-4">
+            <main className="flex-grow flex container mx-auto p-4 w-full justify-center min-h-full items-center">
                 {children}
             </main>
 

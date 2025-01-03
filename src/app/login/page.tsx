@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 const Login: React.FC = () => {
   const [teamId, setTeamId] = useState('');
@@ -31,7 +32,8 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex gap-20 h-full justify-center items-center">
+      <Image src="/secret.png" alt="Secret" width={500} height={300} className="mb-4" />
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl text-black mb-4">Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
