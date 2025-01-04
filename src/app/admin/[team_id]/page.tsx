@@ -5,6 +5,8 @@ import axios from 'axios';
 import PSsearch from '@/app/components/PSsearch';
 import RoomSearch from '@/app/components/RoomSearch';
 
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+
 interface TeamDetails {
   teamId: string;
   teamName: string;
@@ -25,7 +27,7 @@ const TeamPage: React.FC = () => {
       const fetchTeamDetails = async () => {
         try {
           const token = localStorage.getItem('authToken');
-          const response = await axios.get(`http://127.0.0.1:3000/admin/team/${team_id}`, {
+          const response = await axios.get(`${SERVER_URL}/admin/team/${team_id}`, {
             headers: {
               'Authorization': `Bearer ${token}`,
             },

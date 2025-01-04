@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+
 const RoomSearch: React.FC = () => {
   const { team_id } = useParams();
   const [allocatedRoom, setAllocatedRoom] = useState('');
@@ -22,7 +24,7 @@ const RoomSearch: React.FC = () => {
 
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.patch('http://127.0.0.1:3000/admin/team/room', {
+      const response = await axios.patch(`${SERVER_URL}/admin/team/room`, {
         teamId: team_id,
         allocatedRoom,
       }, {

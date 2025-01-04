@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
 
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 interface ProblemStatement {
   psId: string;
   title: string;
@@ -20,7 +21,7 @@ const PSsearch: React.FC = () => {
       const fetchSuggestions = async () => {
         try {
           const token = localStorage.getItem('authToken');
-          const response = await axios.get('http://127.0.0.1:3000/admin/ps', {
+          const response = await axios.get(`${SERVER_URL}/admin/ps`, {
             headers: {
               'Authorization': `Bearer ${token}`,
             },
@@ -54,7 +55,7 @@ const PSsearch: React.FC = () => {
 
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.patch('http://127.0.0.1:3000/admin/team/ps', {
+      const response = await axios.patch(`${SERVER_URL}/admin/team/ps`, {
         teamId: team_id,
         psId: selectedPS.psId,
       }, {

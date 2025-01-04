@@ -8,8 +8,8 @@ export const isAuthenticated = async (): Promise<boolean> => {
     }
 
     try {
-        const decodedToken = jwt.decode(token) as { role?: string };
-        if (decodedToken && decodedToken.role === 'admin') {
+        const decodedToken = jwt.decode(token) as { privilege?: string };
+        if (decodedToken && decodedToken.privilege === 'admin') {
             return true;
         } else {
             return false;

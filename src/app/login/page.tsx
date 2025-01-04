@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+
 const Login: React.FC = () => {
   const [teamId, setTeamId] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +15,7 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://127.0.0.1:3000/login', {
+      const response = await axios.post(`${SERVER_URL}/login`, {
         teamId,
         password,
       });

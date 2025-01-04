@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+
 interface Team {
   teamId: string;
   teamName: string;
@@ -18,7 +20,7 @@ const TeamSearch: React.FC = () => {
       const fetchSuggestions = async () => {
         try {
           const token = localStorage.getItem('authToken');
-          const response = await axios.get('http://127.0.0.1:3000/admin/teams', {
+          const response = await axios.get(`${SERVER_URL}/admin/teams`, {
             headers: {
               'Authorization': `Bearer ${token}`,
             },

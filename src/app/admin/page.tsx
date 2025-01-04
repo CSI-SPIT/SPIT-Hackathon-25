@@ -5,6 +5,7 @@ import { isAuthenticated } from '@/Utils/Auth';
 import { redirect } from 'next/navigation';
 import CSVSetting from '../components/CSVsetting';
 import TeamSearch from '../components/TeamSearch';
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 
 const Admin: React.FC = () => {
   const [auth, setAuth] = useState(false);
@@ -52,7 +53,7 @@ const Dashboard: React.FC = () => {
     const fetchFeatures = async () => {
       try {
         const token = localStorage.getItem('authToken');
-        const response = await axios.get('http://127.0.0.1:3000/features', {
+        const response = await axios.get(`${SERVER_URL}/features`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -69,7 +70,7 @@ const Dashboard: React.FC = () => {
   const toggleFeature = async (feature: keyof typeof features) => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.patch(`http://127.0.0.1:3000/features/${feature}`, {
+      const response = await axios.patch(`${SERVER_URL}/features/${feature}`, {
         value: !features[feature],
       }, {
         headers: {

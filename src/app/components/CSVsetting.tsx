@@ -2,6 +2,8 @@
 import React from 'react';
 import axios from 'axios';
 
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+
 const CSVSetting: React.FC = () => {
   const downloadCsv = async (url: string, filename: string) => {
     try {
@@ -51,37 +53,37 @@ const CSVSetting: React.FC = () => {
       <div className="flex flex-col gap-4">
         <button
           className="bg-blue-500 text-white p-2 rounded"
-          onClick={() => downloadCsv('http://127.0.0.1:3000/admin/csv/ps', 'ps_submissions.csv')}
+          onClick={() => downloadCsv(`${SERVER_URL}/admin/csv/ps`, 'ps_submissions.csv')}
         >
           Download PS CSV
         </button>
         <button
           className="bg-blue-500 text-white p-2 rounded"
-          onClick={() => downloadCsv('http://127.0.0.1:3000/admin/csv/project', 'project_submissions.csv')}
+          onClick={() => downloadCsv(`${SERVER_URL}/admin/csv/project`, 'project_submissions.csv')}
         >
           Download Project CSV
         </button>
         <button
           className="bg-blue-500 text-white p-2 rounded"
-          onClick={() => downloadCsv('http://127.0.0.1:3000/admin/csv/feedback', 'feedback_submissions.csv')}
+          onClick={() => downloadCsv(`${SERVER_URL}/admin/csv/feedback`, 'feedback_submissions.csv')}
         >
           Download Feedback CSV
         </button>
         <button
           className="bg-red-500 text-white p-2 rounded"
-          onClick={() => resetCsv('http://127.0.0.1:3000/admin/csv/ps/reset', 'YOUR_PASSWORD')}
+          onClick={() => resetCsv(`${SERVER_URL}/admin/csv/ps/reset`, 'YOUR_PASSWORD')}
         >
           Reset PS CSV
         </button>
         <button
           className="bg-red-500 text-white p-2 rounded"
-          onClick={() => resetCsv('http://127.0.0.1:3000/admin/csv/project/reset', 'YOUR_PASSWORD')}
+          onClick={() => resetCsv(`${SERVER_URL}/admin/csv/project/reset`, 'YOUR_PASSWORD')}
         >
           Reset Project CSV
         </button>
         <button
           className="bg-red-500 text-white p-2 rounded"
-          onClick={() => resetCsv('http://127.0.0.1:3000/admin/csv/feedback/reset', 'YOUR_PASSWORD')}
+          onClick={() => resetCsv(`${SERVER_URL}/admin/csv/feedback/reset`, 'YOUR_PASSWORD')}
         >
           Reset Feedback CSV
         </button>
