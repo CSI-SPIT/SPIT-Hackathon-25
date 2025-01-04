@@ -1,22 +1,21 @@
-import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 export const isAuthenticated = async (): Promise<boolean> => {
     const token = localStorage.getItem('authToken');
-    console.log(token)
+    console.log(token);
     if (!token) {
         return false;
     }
 
     try {
-        const response = await axios.get('http://127.0.0.1:3000/features', {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-            },
-        });
-
-        return response.status === 200;
+        const decodedToken = jwt.decode(token) as { role?: string };
+        if (decodedToken && decodedToken.role === 'admin') {
+            return true;
+        } else {
+            return false;
+        }
     } catch (error) {
-        console.error('Error checking authentication:', error);
+        console.error('Error decoding token:', error);
         return false;
     }
 };
