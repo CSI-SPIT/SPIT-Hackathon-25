@@ -40,8 +40,8 @@ const ScanQR: React.FC = () => {
         setMessage(`Failed to redeem meal type ${mealType}`);
         setMessageColor("text-red-500");
       }
-    } catch (error: any) {
-      if (error.response && error.response.status === 400) {
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response && error.response.status === 400) {
         setMessage(`Meal type ${mealType} already redeemed`);
         setMessageColor("text-red-500");
       } else {
