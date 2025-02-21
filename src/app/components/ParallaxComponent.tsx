@@ -61,11 +61,11 @@ export default function ParallaxComponent() {
   return (
     <div className="bg-black relative" style={{ position: "relative", width: "100%", height: "100vh" }}>
       <Image
-        src="/logo.svg"
+        src="/logo.png"
         alt="logo"
-        width={48} // Set appropriate width
-        height={65} // Set appropriate height
-        style={{ position: "absolute", zIndex: 2, top: 25, left: 25, cursor: "url('/cursor-click.png'), auto" }}
+        width={80}
+        height={80}
+        style={{ position: "absolute", zIndex: 2, top: 10, left: 10, cursor: "url('/cursor-click.png'), auto" }}
         onClick={() => handleClick('https://csi.spit.ac.in/')}
       />
       <motion.div
