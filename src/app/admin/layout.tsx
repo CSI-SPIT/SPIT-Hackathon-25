@@ -1,5 +1,5 @@
 import React from 'react';
-import { isAuthenticated } from '@/Utils/Auth';
+import { isAuthenticated } from '@/utils/Auth';
 import { redirect } from 'next/navigation';
 
 interface AdminLayoutProps {

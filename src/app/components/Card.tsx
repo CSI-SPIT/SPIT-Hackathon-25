@@ -32,9 +32,11 @@ const Card: React.FC<CardProps> = ({ src, alt, scrollY, inputRange, outputRange,
       <Image
         src={src}
         alt={alt}
-        layout="fill"
-        objectFit="contain"
-      />
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "contain"
+        }} />
     </motion.div>
   );
 };

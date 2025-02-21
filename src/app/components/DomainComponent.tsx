@@ -4,35 +4,35 @@ import Tablet from "./Tablet";
 import TechWeek from './TechWeek';
 
 const DomainComponent: React.FC = () => {
-    return (
-        <div
-            style={{
-                backgroundImage: "url('/intro1.svg')",
-                backgroundPosition: "50% 0",
-                backgroundRepeat: "repeat-x",
-                backgroundSize: "33px",
-                backgroundAttachment: "scroll",
-                paddingBottom: 0,
-                minHeight: "60vh",
-                backgroundColor: "#22B14C",
-            }}
-        >
-            <div className='h-[30vh] w-full'></div>
-            <div className="flex flex-col items-center justify-center min-h-screen">
-                <GameControllerBg>
-                    <Tablet />
-                </GameControllerBg>
-                <div className="mt-14">
-                    <TechWeek />
-                </div>
-            </div>
+  return (
+    <div
+      style={{
+        backgroundImage: "url('/intro1.svg')",
+        backgroundPosition: "50% 0",
+        backgroundRepeat: "repeat-x",
+        backgroundSize: "33px",
+        backgroundAttachment: "scroll",
+        paddingBottom: 0,
+        minHeight: "60vh",
+        backgroundColor: "#22B14C",
+      }}
+    >
+      <div className='h-[30vh] w-full'></div>
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <GameControllerBg>
+          <Tablet />
+        </GameControllerBg>
+        <div className="mt-14">
+          <TechWeek />
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 //background image of controller
-const GameControllerBg: React.FC<{children:React.ReactNode}> = ({children})=>{
-    return (
+const GameControllerBg: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
     //     <div
     //         className="hidden md:flex"
     //        style={{
@@ -60,15 +60,15 @@ const GameControllerBg: React.FC<{children:React.ReactNode}> = ({children})=>{
     //        </div>
     //    </div>
     <div
-            className="bg-none lg:bg-[url('/Console.png')] bg-contain bg-no-repeat bg-center w-full max-w-[1350px] aspect-[16/9] relative flex items-center justify-center"
-        >
-            <div
-                className="w-full left-[0%] lg:w-[50%] h-[70%] flex items-center justify-center absolute top-[13%] lg:left-[24.6%] scale-[0.85]"
-            >
-                {children}
-            </div>
-        </div>
-    )
+      className="bg-none lg:bg-[url('/Console.png')] bg-contain bg-no-repeat bg-center w-full max-w-[1350px] aspect-[16/9] relative flex items-center justify-center"
+    >
+      <div
+        className="w-full left-[0%] lg:w-[50%] h-[70%] flex items-center justify-center absolute top-[13%] lg:left-[24.6%] scale-[0.85]"
+      >
+        {children}
+      </div>
+    </div>
+  )
 }
 
 export default DomainComponent;

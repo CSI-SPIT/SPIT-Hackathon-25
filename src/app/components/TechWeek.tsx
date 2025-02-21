@@ -8,10 +8,10 @@ interface SectionProps {
 
 export default function TechWeek() {
   const sections = [
-    { title: 'API Workshop, SQL Workshop', text: 'API Workshop: Dive into the fundamentals of APIs, including how they enable communication between different software systems. SQL Workshop: Explore the core concepts of SQL for database management.' , date: '/feb3.svg' },
+    { title: 'API & SQL Workshop', text: 'API Workshop: Dive into the fundamentals of APIs, including how they enable communication between different software systems. SQL Workshop: Explore the core concepts of SQL for database management.' , date: '/feb3.svg' },
     { title: 'Education Fair', text: 'Education Fair: Explore opportunities and insights at the education fair, a one-stop platform for academic and career guidance.' , date: '/feb4.svg' },
-    { title: 'UNSQLVED', text: 'Put your SQL expertise to the test in an engaging competition filled with challenging tasks and exciting rewards.' , date: '/feb5.svg' },
-    { title: 'rAPId', text: 'Dive into real-world API scenarios and showcase your problem-solving skills in this engaging and collaborative event. Tech Fest Setup: Immerse yourself in a tech-themed festival featuring vibrant booths, gaming zones, food stalls, and interactive activities.' , date: '/feb6.svg' },
+    { title: 'rAPId', text: 'Dive into real-world API scenarios and showcase your problem-solving skills in this engaging and collaborative event. Tech Fest Setup: Immerse yourself in a tech-themed festival featuring vibrant booths, gaming zones, food stalls, and interactive activities.' , date: '/feb5.svg' },
+    { title: 'unSQLved', text: 'Put your SQL expertise to the test in an engaging competition filled with challenging tasks and exciting rewards.' , date: '/feb6.svg' },
     { title: 'Main Speaker Session', text: 'Main Speaker Session: Attend an inspiring session with an expert speaker sharing insights and knowledge on cutting-edge topics. Tech Fair: Experience the excitement of the tech fair with interactive stalls, gaming challenges, wearable tech, and much more.' , date: '/feb7.svg' },
   ];
 

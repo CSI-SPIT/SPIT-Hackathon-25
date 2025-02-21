@@ -1,29 +1,29 @@
 .title {
-    background: #2e2e2e;
-    padding: 15px;
-    color: #fff;
-    margin-bottom: 30px;
-    font-family: var(--font-press-start), system-ui;
-    font-size: 24px;
-    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff1f, inset 0px -5px #00000030;
+  background: #2e2e2e;
+  padding: 15px;
+  color: #fff;
+  margin-bottom: 30px;
+  font-family: var(--font-press-start), system-ui;
+  font-size: 24px;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff1f, inset 0px -5px #00000030;
 }
 
 .button {
-    color: #fff;
-    background-color: #bc3a3a;
-    font-family: var(--font-press-start), serif;
-    font-weight: 400;
-    font-style: normal;
-    padding: 15px 40px 15px 40px;
-    margin: 10px;
-    font-size: 24px;
-    border: 0;
-    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
-    cursor: pointer;
+  color: #fff;
+  background-color: #bc3a3a;
+  font-family: var(--font-press-start), serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 15px 40px 15px 40px;
+  margin: 10px;
+  font-size: 24px;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: url('/cursor-click.png'), auto;
 }
 
 .button:hover {
-    transform: translateY(5px);
-    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
-    text-decoration: none;
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+  text-decoration: none;
 }

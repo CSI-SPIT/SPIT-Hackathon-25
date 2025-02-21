@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
+import Image from "next/image";
 
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 

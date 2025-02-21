@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { isAuthenticated } from '@/Utils/Auth';
+import { isAuthenticated } from '@/utils/Auth';
 import { redirect } from 'next/navigation';
 import CSVSetting from '../components/CSVsetting';
 import TeamSearch from '../components/TeamSearch';
