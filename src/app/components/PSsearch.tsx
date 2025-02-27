@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { RiSearchLine, RiSendPlaneFill } from 'react-icons/ri';
+import { RiSearchLine } from 'react-icons/ri';
 import { Input } from "@/components/ui/input";
 
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL

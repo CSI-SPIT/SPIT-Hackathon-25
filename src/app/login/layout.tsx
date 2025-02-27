@@ -6,23 +6,20 @@ interface AdminLayoutProps {
 const PageLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-gray-800 text-white p-4">
+    <div className="min-h-screen flex flex-col bg-[#171923]">
+      <header className="bg-[#1d2029] border-b border-gray-800 text-white p-4">
         <div className="container mx-auto">
-          <h1 className="text-2xl">Admin Dashboard</h1>
+          <h1 className="text-2xl font-bold text-[#a5f0d3]">CSI Admin Portal</h1>
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="flex-grow flex container mx-auto p-4 w-full justify-center min-h-full items-center">
         {children}
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white p-4 text-center">
+      <footer className="bg-[#1d2029] border-t border-gray-800 text-white p-4 text-center">
         <div className="container mx-auto">
-          <p>&copy; {new Date().getFullYear()} CSI-SPIT. All rights reserved.</p>
+          <p className="text-gray-400">&copy; {new Date().getFullYear()} CSI-SPIT. All rights reserved.</p>
         </div>
       </footer>
     </div>

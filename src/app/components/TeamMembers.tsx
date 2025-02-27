@@ -201,7 +201,7 @@ const TeamMembers: React.FC<TeamMembersProps> = ({
 
         {editedMembers.length === 0 && (
           <div className="bg-[#1d2029] p-4 rounded-lg border border-gray-800 text-center text-gray-500">
-            No team members added. Click "Add Member" to add team members.
+            No team members added. Click &quot;Add Member&quot; to add team members.
           </div>
         )}
 
