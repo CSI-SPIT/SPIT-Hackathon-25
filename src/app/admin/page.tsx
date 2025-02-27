@@ -1,134 +1,42 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { isAuthenticated } from '@/utils/Auth';
-import { redirect } from 'next/navigation';
-import CSVSetting from '../components/CSVsetting';
-import TeamSearch from '../components/TeamSearch';
-const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+import React from 'react';
+import { RiTeamLine, RiFileList3Line, RiSettings4Line, RiHistoryLine } from 'react-icons/ri';
+import Link from 'next/link';
 
-const Admin: React.FC = () => {
-  const [auth, setAuth] = useState(false);
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      const authStatus = await isAuthenticated();
-      if (!authStatus) {
-        redirect('/');
-      } else {
-        setAuth(true);
-      }
-    };
-
-    checkAuth();
-  }, []);
-
-  if (!auth) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <main className="h-full text-center flex justify-center items-start">
-        <div className='min-w-[15%]'>
-          <Dashboard />
-        </div>
-          <div className='w-full'><TeamSearch/></div>
-        <div className='min-w-[15%]'>
-          <CSVSetting />
-        </div>
-    </main>
-  );
-};
-
-const Dashboard: React.FC = () => {
-  const [features, setFeatures] = useState({
-    showPSForm: false,
-    showProjectForm: false,
-    showFeedbackForm: false,
-    showAllocatedRoom: false,
-    showAllocatedPS: false,
-  });
-
-  useEffect(() => {
-    const fetchFeatures = async () => {
-      try {
-        const token = localStorage.getItem('authToken');
-        const response = await axios.get(`${SERVER_URL}/features`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
-        });
-        setFeatures(response.data);
-      } catch (error) {
-        console.error('Error fetching features:', error);
-      }
-    };
-
-    fetchFeatures();
-  }, []);
-
-  const toggleFeature = async (feature: keyof typeof features) => {
-    try {
-      const token = localStorage.getItem('authToken');
-      const response = await axios.patch(`${SERVER_URL}/features/${feature}`, {
-        value: !features[feature],
-      }, {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-
-      if (response.status === 200) {
-        setFeatures((prevFeatures) => ({
-          ...prevFeatures,
-          [feature]: !prevFeatures[feature],
-        }));
-      }
-    } catch (error) {
-      console.error(`Error updating feature ${feature}:`, error);
-    }
-  };
-
-  const featureButtons = [
-    { label: 'Toggle PS Form', feature: 'showPSForm' },
-    { label: 'Toggle Project Form', feature: 'showProjectForm' },
-    { label: 'Toggle Feedback Form', feature: 'showFeedbackForm' },
-    { label: 'Toggle Allocated Room', feature: 'showAllocatedRoom' },
-    { label: 'Toggle Allocated PS', feature: 'showAllocatedPS' },
+const AdminDashboard: React.FC = () => {
+  const cards = [
+    { title: 'Feature Controls', icon: RiSettings4Line, href: '/admin/features', description: 'Enable/disable forms and other features' },
+    { title: 'CSV Management', icon: RiFileList3Line, href: '/admin/csv', description: 'Download and reset submission data' },
+    { title: 'Team Search', icon: RiTeamLine, href: '/admin/teams', description: 'Find and manage teams' },
+    { title: 'System Logs', icon: RiHistoryLine, href: '/admin/logs', description: 'View system activity logs' },
   ];
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl mb-4">Admin Dashboard</h1>
-      <div className="flex flex-col gap-4">
-        {featureButtons.map(({ label, feature }) => (
-          <Button
-            key={feature}
-            label={label}
-            isActive={features[feature as keyof typeof features]}
-            onClick={() => toggleFeature(feature as keyof typeof features)}
-          />
+    <div className="container mx-auto px-4 py-6 overflow-auto">
+      <div className="mb-8">
+        <h1 className="text-2xl text-[#a5f0d3] font-bold mb-4">Admin Dashboard</h1>
+        <p className="text-gray-400">Welcome to the CSI Admin Panel. Manage your hackathon resources from here.</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {cards.map((card) => (
+          <Link 
+            key={card.title}
+            href={card.href}
+            className="bg-[#1d2029] border border-gray-800 hover:border-[#a5f0d3] rounded-lg p-6 transition-all duration-200 hover:shadow-lg hover:shadow-[#a5f0d3]/10 no-underline"
+          >
+            <div className="flex flex-col h-full">
+              <div className="mb-4">
+                <card.icon className="h-8 w-8 text-[#a5f0d3]" />
+              </div>
+              <h2 className="text-lg font-semibold text-gray-200 mb-2">{card.title}</h2>
+              <p className="text-gray-400 text-sm mt-auto">{card.description}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
 
-interface ButtonProps {
-  label: string;
-  isActive: boolean;
-  onClick: () => void;
-}
-
-const Button: React.FC<ButtonProps> = ({ label, isActive, onClick }) => {
-  return (
-    <button
-      className={`p-2 rounded ${isActive ? 'bg-green-500' : 'bg-red-500'} text-white`}
-      onClick={onClick}
-    >
-      {label}
-    </button>
-  );
-};
-
-export default Admin;
+export default AdminDashboard;

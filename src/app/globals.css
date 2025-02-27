@@ -28,6 +28,10 @@ body {
   height: auto; /* Maintain aspect ratio */
 }
 
+button, a {
+  cursor: url('/cursor-click.png'), auto;
+}
+
 @media (max-width: 768px) {
   .title {
       flex-direction: column; /* Switch to column layout for smaller screens */
@@ -145,7 +149,7 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

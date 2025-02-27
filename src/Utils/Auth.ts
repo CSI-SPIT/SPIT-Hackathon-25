@@ -1,17 +1,21 @@
-import jwt from 'jsonwebtoken';
+import axios from 'axios';
+
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 
 export const isAuthenticated = async (): Promise<boolean> => {
   const token = localStorage.getItem('authToken');
-
-  if (!token)
-    return false;
+  if (!token) return false;
 
   try {
-    const decodedToken = jwt.decode(token) as { privilege?: string };
+    const response = await axios.get(`${SERVER_URL}/admin/logs`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-    if (decodedToken && decodedToken.privilege === 'admin') return true;
-    else return false;
+    if (response.status === 200) return true;
 
+    return false;
   } catch (error) {
     console.error('Error decoding token:', error);
     return false;
