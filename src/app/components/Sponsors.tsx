@@ -26,7 +26,7 @@ const Sponsors: React.FC = () => {
                 <img src='/sptbiwhitelogo.png' alt="SPTBI Logo" className='h-[80px]' />
               </a>
               <a href="https://www.linkedin.com/company/volta-industries-llp" target='_blank' >
-                <img src='/6D.jpg' alt="Dimension Six Logo" className='h-auto w-[200px]' />
+                <img src='/dimension6.jpg' alt="Dimension Six Logo" className='h-auto w-[200px]' />
               </a>
             </div>
           </div>

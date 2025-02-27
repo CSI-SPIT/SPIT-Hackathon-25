@@ -1,20 +1,23 @@
 "use client";
 import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
 import axios from 'axios';
+import { RiHotelLine } from 'react-icons/ri';
+import { Input } from "@/components/ui/input";
 
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 
-const RoomSearch: React.FC = () => {
-  const { team_id } = useParams();
+interface RoomSearchProps {
+  teamId?: string;
+}
+
+const RoomSearch: React.FC<RoomSearchProps> = ({ teamId }) => {
   const [allocatedRoom, setAllocatedRoom] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
   const handleAllocateRoom = async () => {
-    if (!team_id || !allocatedRoom) {
-      alert('Please enter a team ID and a room number.');
+    if (!teamId || !allocatedRoom) {
       return;
     }
 
@@ -25,7 +28,7 @@ const RoomSearch: React.FC = () => {
     try {
       const token = localStorage.getItem('authToken');
       const response = await axios.patch(`${SERVER_URL}/admin/team/room`, {
-        teamId: team_id,
+        teamId: teamId,
         allocatedRoom,
       }, {
         headers: {
@@ -35,6 +38,7 @@ const RoomSearch: React.FC = () => {
 
       if (response.status === 200) {
         setSuccess('Room allocated successfully');
+        setTimeout(() => setSuccess(null), 3000);
       } else {
         setError('Failed to allocate room');
       }
@@ -47,26 +51,54 @@ const RoomSearch: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl mb-4">Allocate Room</h1>
-      <div className="mb-4">
-        <input
+    <div>
+      <h3 className="text-lg font-medium text-[#a5f0d3] mb-3">Allocate Room</h3>
+      <div className="relative mb-4">
+        <Input
           type="text"
           value={allocatedRoom}
           onChange={(e) => setAllocatedRoom(e.target.value)}
-          placeholder="Enter Room Number"
-          className="p-2 text-black border border-gray-300 rounded w-full"
+          placeholder="Enter Room Number (e.g., 406A)"
+          className="pl-10 bg-[#1d2029] border-gray-800 focus:border-[#a5f0d3] focus:ring-1 focus:ring-[#a5f0d3] text-gray-200"
         />
+        <RiHotelLine className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
       </div>
+
       <button
-        className="bg-blue-500 text-white p-2 rounded"
+        className={`w-full flex items-center justify-center gap-2 py-2 px-4 rounded-md transition-all ${!teamId || !allocatedRoom
+          ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
+          : 'bg-[#a5f0d3]/20 hover:bg-[#a5f0d3]/30 text-[#a5f0d3] border border-[#a5f0d3]/30'
+          }`}
         onClick={handleAllocateRoom}
-        disabled={loading}
+        disabled={loading || !teamId || !allocatedRoom}
       >
-        {loading ? 'Allocating...' : 'Allocate Room'}
+        {loading ? (
+          <>
+            <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-[#a5f0d3]"></div>
+            <span>Allocating...</span>
+          </>
+        ) : (
+          <span>Allocate Room</span>
+        )}
       </button>
-      {error && <p className="text-red-500 mt-4">{error}</p>}
-      {success && <p className="text-green-500 mt-4">{success}</p>}
+
+      {error && (
+        <div className="mt-3 p-2 bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-md">
+          {error}
+        </div>
+      )}
+
+      {success && (
+        <div className="mt-3 p-2 bg-green-500/10 border border-green-500/30 text-green-400 text-sm rounded-md">
+          {success}
+        </div>
+      )}
+
+      {!teamId && (
+        <div className="mt-3 p-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm rounded-md">
+          Select a team to allocate a room
+        </div>
+      )}
     </div>
   );
 };

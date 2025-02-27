@@ -7,7 +7,7 @@ export const isAuthenticated = async (): Promise<boolean> => {
   if (!token) return false;
 
   try {
-    const response = await axios.get(`${SERVER_URL}/admin/logs`, {
+    const response = await axios.get(`${SERVER_URL}/admin/health`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
