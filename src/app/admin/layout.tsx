@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { isAuthenticated } from '@/utils/Auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
-import { 
-  RiDashboardLine, 
-  RiTeamLine, 
+import {
+  RiDashboardLine,
+  RiTeamLine,
   RiFileList3Line,
   RiSettings4Line,
+  RiRestaurantLine,
   RiHistoryLine,
 } from 'react-icons/ri';
 
@@ -16,6 +17,7 @@ const navigation = [
   { name: 'Features', href: '/admin/features', icon: RiSettings4Line },
   { name: 'CSV Management', href: '/admin/csv', icon: RiFileList3Line },
   { name: 'Teams', href: '/admin/teams', icon: RiTeamLine },
+  { name: 'Meal Tracking', href: '/admin/meal', icon: RiRestaurantLine },
   { name: 'Logs', href: '/admin/logs', icon: RiHistoryLine },
 ];
 
@@ -61,8 +63,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
           <ul className="space-y-2">
             {navigation.map((item) => (
               <li key={item.name}>
-                <Link 
-                  href={item.href} 
+                <Link
+                  href={item.href}
                   className="flex items-center gap-3 px-4 py-3 text-md text-gray-300 hover:bg-[#a5f0d3]/10 hover:text-[#a5f0d3] rounded-lg transition-colors duration-200 no-underline"
                 >
                   <item.icon className="h-6 w-6" />
