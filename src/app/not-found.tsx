@@ -12,6 +12,7 @@ export default function NotFound() {
             fill
             className="object-contain"
             priority
+            unoptimized
           />
         </div>
         <div className="space-y-2 sm:space-y-4">
